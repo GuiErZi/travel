@@ -17,26 +17,10 @@
         </li>
       </div>
     </div>
-    <div class="area">
-      <h2 class="title first">A</h2>
+    <div class="area" v-for="(item, key) of cities" :key="key">
+      <h2 class="title first">{{key}}</h2>
       <div class="city-wrapper">
-        <li class="city" v-for="city of cities" v-bind:key="city.id">
-          {{city.name}}
-        </li>
-      </div>
-    </div>
-    <div class="area">
-      <h2 class="title first">A</h2>
-      <div class="city-wrapper">
-        <li class="city" v-for="city of cities" v-bind:key="city.id">
-          {{city.name}}
-        </li>
-      </div>
-    </div>
-    <div class="area">
-      <h2 class="title first">A</h2>
-      <div class="city-wrapper">
-        <li class="city" v-for="city of cities" v-bind:key="city.id">
+        <li class="city" v-for="city of item" v-bind:key="city.id">
           {{city.name}}
         </li>
       </div>
@@ -49,85 +33,9 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'cityList',
-  data () {
-    return {
-      hotCities: [
-        {
-          id: '0001',
-          name: '北京'
-        },
-        {
-          id: '0002',
-          name: '上海'
-        },
-        {
-          id: '0003',
-          name: '三亚'
-        },
-        {
-          id: '0004',
-          name: '香港'
-        },
-        {
-          id: '0005',
-          name: '杭州'
-        },
-        {
-          id: '0006',
-          name: '广州'
-        },
-        {
-          id: '0007',
-          name: '成都'
-        },
-        {
-          id: '0008',
-          name: '深圳'
-        },
-        {
-          id: '0009',
-          name: '苏州'
-        }
-      ],
-      cities: [
-        {
-          id: '0001',
-          name: '北京'
-        },
-        {
-          id: '0002',
-          name: '上海'
-        },
-        {
-          id: '0003',
-          name: '三亚'
-        },
-        {
-          id: '0004',
-          name: '香港'
-        },
-        {
-          id: '0005',
-          name: '杭州'
-        },
-        {
-          id: '0006',
-          name: '广州'
-        },
-        {
-          id: '0007',
-          name: '成都'
-        },
-        {
-          id: '0008',
-          name: '深圳'
-        },
-        {
-          id: '0009',
-          name: '苏州'
-        }
-      ]
-    }
+  props: {
+    cities: Object,
+    hotCities: Array
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)

@@ -1,18 +1,14 @@
 <template>
   <ul class="lists">
-    <li class="list" v-for="(item, index) of items" :key="index">{{item}}</li>
+    <li class="list" v-for="(item, key) of cities" :key="key">{{key}}</li>
   </ul>
 </template>
 
 <script>
 export default {
   name: 'wordList',
-  data () {
-    return {
-      items: [
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-      ]
-    }
+  props: {
+    cities: Object
   }
 }
 </script>
