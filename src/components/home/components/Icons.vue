@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-imgs">
@@ -16,60 +16,14 @@
 <script>
 export default {
   name: 'homeIcons',
+  props: {
+    iconLists: Array
+  },
   data () {
     return {
-      iconLists: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          title: '热门景点'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-          title: '文化古迹'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-          title: '演出'
-        },
-        {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          title: '一日游'
-        },
-        {
-          id: '0005',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          title: '西安必游'
-        },
-        {
-          id: '0006',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-          title: '动植物园'
-        },
-        {
-          id: '0007',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/95/8d02011d149bdb02.png',
-          title: '汽车票'
-        },
-        {
-          id: '0008',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png',
-          title: '逛博物馆'
-        },
-        {
-          id: '0009',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-          title: '亲子游'
-        },
-        {
-          id: '0010',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-          title: '全部玩乐'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {

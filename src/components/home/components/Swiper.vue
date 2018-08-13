@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-  <swiper :options="swiperOption" ref="mySwiper">
+  <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper">
     <!-- slides -->
     <swiper-slide v-for="swiperList of swiperLists" v-bind:key="swiperList.id">
          <img class="swiper-img" :src="swiperList.imgUrl">
@@ -19,21 +19,15 @@ export default {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swiperLists: [
-        {
-          id: '0001',
-          imgUrl: 'https://source.qunarzz.com/site/images/wap/home/recommend/iphoneplus/20180716_wap_11043.jpg'
-        },
-        {
-          id: '0002',
-          imgUrl: 'https://source.qunarzz.com/site/images/wap/home/recommend/iphoneplus/dujia_shuqi_banner_20180710.jpg'
-        },
-        {
-          id: '0003',
-          imgUrl: 'https://source.qunarzz.com/site/images/wap/home/recommend/iphoneplus/anquan_20180716.png'
-        }
-      ]
+      }
+    }
+  },
+  props: {
+    swiperLists: Array
+  },
+  computed: {
+    showSwiper () {
+      return this.swiperLists.length
     }
   }
 }
