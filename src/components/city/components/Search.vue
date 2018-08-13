@@ -29,7 +29,7 @@ export default {
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
   },
-  methods: {
+  computed: {
     showTip () {
       return !this.list.length
     }
@@ -84,6 +84,7 @@ export default {
     overflow hidden
     z-index 100
     font-size 0
+    background #fff
     .name
       width 33.3%
       font-size .28rem
@@ -91,7 +92,6 @@ export default {
       line-height .9rem
       display inline-block
       color $bgColor
-      background #fff
       text-align center
       border-bottom .02rem solid #ddd
       border-right .02rem solid #ddd
