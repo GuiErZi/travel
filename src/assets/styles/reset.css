@@ -2,7 +2,7 @@
 * @Author: fjz
 * @Date:   2018-08-13 10:25:29
 * @Last Modified by:   fjz
-* @Last Modified time: 2018-08-13 10:25:59
+* @Last Modified time: 2018-08-13 11:16:57
 */
 
 html, body, div, span, applet, object, iframe,
@@ -21,7 +21,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	/*font-size: 100%;*/
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -35,6 +35,9 @@ body {
 }
 ol, ul {
 	list-style: none;
+}
+html {
+	font-size: 50px;
 }
 blockquote, q {
 	quotes: none;
