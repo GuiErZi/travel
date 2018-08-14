@@ -32,7 +32,9 @@ export default {
   computed: {
     showTip () {
       return !this.list.length
-    },
+    }
+  },
+  methods: {
     handleHotCities (city) {
       this.$store.dispatch('changeCity', city)
       this.$router.push('/')
