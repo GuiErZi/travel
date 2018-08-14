@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" ref="wrapper" v-show="keywords">
       <ul>
-        <li v-for="item of list" class="name" :key="item.id">{{item.name}}</li>
+        <li v-for="item of list" class="name" :key="item.id" @click="handleHotCities(item.name)">{{item.name}}</li>
         <li class="no-data" v-show="showTip">没有找到匹配数据</li>
       </ul>
     </div>
@@ -32,6 +32,10 @@ export default {
   computed: {
     showTip () {
       return !this.list.length
+    },
+    handleHotCities (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
     }
   },
   watch: {
