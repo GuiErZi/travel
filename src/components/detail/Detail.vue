@@ -2,26 +2,34 @@
   <div>
     <detail-banner></detail-banner>
     <detail-header   v-show="showAbs" :style="css"></detail-header>
-    <div class="content"></div>
-  </div>
+    <detail-list :list="list"></detail-list>
+   </div>
 </template>
 
 <script>
 import detailBanner from './components/Banner'
 import detailHeader from './components/Header'
+import detailList from './components/List'
+import axios from 'axios'
 export default {
   name: 'Detail',
   components: {
     detailBanner,
-    detailHeader
+    detailHeader,
+    detailList
   },
   data () {
     return {
       showAbs: false,
       css: {
         opacity: 0
-      }
+      },
+      list: [],
+      viewName: ''
     }
+  },
+  mounted () {
+    this.getDetailInfo()
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
@@ -41,6 +49,16 @@ export default {
         this.showAbs = true
       } else {
         this.showAbs = false
+      }
+    },
+    getDetailInfo () {
+      axios.get('/api/ticket.json').then(this.getDetailInfoSucc)
+    },
+    getDetailInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        this.list = res.data.list
+        this.viewName = res.data.viewName
       }
     }
   }

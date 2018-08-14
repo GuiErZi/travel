@@ -29,7 +29,7 @@ export default {
     left 0px
     top 0px
     width 100%
-    z-index 100
+    z-index 19
     .icon-back
       position absolute
       left .2rem
