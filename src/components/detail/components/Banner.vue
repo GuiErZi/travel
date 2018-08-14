@@ -1,24 +1,46 @@
 <template>
   <div>
-    <div class="wrapper">
-      <img src="//img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" class="img">
-      <router-link to="/">
-        <span class="iconfont go-home">&#xe604;</span>
-      </router-link>
-      <p class="pictures"><span class="iconfont pictures-review">&#xe627;</span><span class="num">15</span></p>
-      <h2 class="title">上海迪士尼乐园</h2>
-      <div class="gradient"></div>
+    <div class="main">
+      <div class="wrapper">
+        <img src="//img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" class="img" @click="show">
+        <router-link to="/">
+          <span class="iconfont go-home">&#xe604;</span>
+        </router-link>
+        <p class="pictures"><span class="iconfont pictures-review">&#xe627;</span><span class="num">15</span></p>
+        <h2 class="title">上海迪士尼乐园</h2>
+        <div class="gradient"></div>
+      </div>
+      <common-gallary v-show="showGallary" v-on:close="hideGallary"></common-gallary>
     </div>
   </div>
 </template>
 
 <script>
+import commonGallary from 'common/gallary/Gallary'
 export default {
-  name: 'detailBanner'
+  name: 'detailBanner',
+  data () {
+    return {
+      showGallary: false
+    }
+  },
+  methods: {
+    show () {
+      this.showGallary = true
+    },
+    hideGallary () {
+      this.showGallary = false
+    }
+  },
+  components: {
+    commonGallary
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
+.main
+  position relative
   .wrapper
     font-size .24rem
     width 100%
