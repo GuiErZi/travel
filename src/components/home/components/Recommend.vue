@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="recommend-title">热销推荐</div>
+    <div class="recommend-title"><span class="iconfont icon">&#xe65c;</span>热销推荐</div>
     <ul>
       <router-link :to="'/detail/' + item.id" class="item border-bottom" v-for="item of recommendLists" :key="item.id">
           <img :src="item.imgUrl" alt="" class="item-img">
@@ -31,6 +31,10 @@ export default {
     text-indent .2rem
     margin-top .2rem
     font-size 13px
+    .icon
+      color #FF7548
+      font-weight bold
+      margin-right .1rem
   .item
     display flex
     height 1.9rem

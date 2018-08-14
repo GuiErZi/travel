@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="recommend-title">周末去哪儿</div>
+    <div class="recommend-title"><span class="iconfont icon">&#xe649;</span>周末去哪儿</div>
     <ul>
       <li class="item border-bottom" v-for="item of weekendLists" :key="item.id">
         <div class="img-wrapper">
@@ -31,6 +31,10 @@ export default {
     background: #eee
     text-indent .2rem
     font-size .28rem
+    .icon
+      color #FF7548
+      margin-right .1rem
+      font-weight bold
   .item
     display block
     .img-wrapper

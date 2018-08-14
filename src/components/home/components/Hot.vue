@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="recommend-title">本周热门榜单</div>
+    <div class="recommend-title"><span class="iconfont icon">&#xe644;</span>本周热门榜单</div>
     <ul class="scroll">
       <li class="item border-bottom" v-for="item of hotCities" :key="item.id">
           <img :src="item.imgUrl" alt="" class="item-img">
@@ -30,6 +30,10 @@ export default {
     text-indent .2rem
     margin-top .2rem
     font-size 13px
+    .icon
+      color #FF7548
+      font-weight bold
+      margin-right .1rem
   .scroll
     overflow-x scroll
     white-space nowrap
