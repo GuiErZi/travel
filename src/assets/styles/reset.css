@@ -2,7 +2,7 @@
 * @Author: fjz
 * @Date:   2018-08-13 10:25:29
 * @Last Modified by:   fjz
-* @Last Modified time: 2018-08-13 20:43:40
+* @Last Modified time: 2018-08-14 16:36:35
 */
 
 html, body, div, span, applet, object, iframe,
@@ -60,5 +60,8 @@ input,button {
 }
 button {
 	background-color: transparent;
+}
+a {
+	text-decoration: none;
 }
 
