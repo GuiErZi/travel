@@ -5,14 +5,14 @@
       <h2 class="title">当前城市</h2>
       <div class="city-wrapper">
         <li class="city active">
-          北京
+          {{this.$store.state.city}}
         </li>
       </div>
     </div>
     <div class="area">
       <h2 class="title">热门城市</h2>
       <div class="city-wrapper">
-        <li class="city" v-for="city of hotCities" v-bind:key="city.id">
+        <li class="city" v-for="city of hotCities" v-bind:key="city.id" @click="handleHotCities(city.name)">
           {{city.name}}
         </li>
       </div>
@@ -20,7 +20,7 @@
     <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
       <h2 class="title first">{{key}}</h2>
       <div class="city-wrapper">
-        <li class="city" v-for="city of item" v-bind:key="city.id">
+        <li class="city" v-for="city of item" v-bind:key="city.id" @click="handleHotCities(city.name)">
           {{city.name}}
         </li>
       </div>
@@ -47,6 +47,12 @@ export default {
         const refs = this.$refs[this.letter][0]
         this.scroll.scrollToElement(refs)
       }
+    }
+  },
+  methods: {
+    handleHotCities (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
     }
   }
 }
