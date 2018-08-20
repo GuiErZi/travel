@@ -1,21 +1,28 @@
-# travel
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<h3>1、本项目采用技术</h3>
+<dl>
+  <dt>vue@2.5</dt>
+  <dd>vue-awesome-swiper</dd>
+  <dd>vuex</dd>
+  <dd>vue-router</dd>
+  <dd>axios</dd>
+  <dd>stylus</dd>
+  <dd></dd>
+</dl>
+<ul>
+  <li>webpack@3.6</li>
+  <li>npm</li>
+</ul>
+<h3>2、本项目构建思想</h3>
+<dl>
+  <dt>页面&组件</dt>
+  <dd>将所有页面单独划归一个目录</dd>
+  <dd>每个页面的独有组件在页面内统一划归为一个单独目录</dd>
+  <dd>页面的共同组件单独抽离出来，供需要的页面或组件使用</dd>
+</dl>
+<dl>
+  <dt>数据方面</dt>
+  <dd>前台所有数据都放在mook文件夹内</dd>
+  <dd>并未真正上服务器跑代码</dd>
+  <dd>所有组件所需的数据均由页面引入，并通过父子组件传值完成数据传递</dd>
+  <dd>不同父组件的子组件之间传值由总的入口函数当做中间件完成---先由子组件向上传递，再由父组件向下传递</dd>
+</dl>
